@@ -29,3 +29,5 @@ router.get('/:id',(req,res)=>{
     lastName:'Quijano'
   })
 })
+
+module.exports = router;

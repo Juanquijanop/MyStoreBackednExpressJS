@@ -28,3 +28,6 @@ router.get('/:id',(req,res)=>{
     brand:'Hp'
   })
 })
+
+
+module.exports = router

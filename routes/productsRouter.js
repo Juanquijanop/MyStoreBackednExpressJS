@@ -25,6 +25,16 @@ router.get('/:id', (req, res) => {
   });
 });
 
+
+router.post('/',(req,res)=>{
+  const body = req.body;
+
+  res.json({
+    message:'Created',
+    body
+  })
+})
+
 module.exports = router;
 
 
