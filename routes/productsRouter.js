@@ -16,15 +16,11 @@ router.get('/', (req, res) => {
   res.json(products);
 });
 
-router.get('/filter', (req, res) => {
-  res.send('Yo soy un filter');
-});
-
 router.get('/:id', (req, res) => {
   const { id } = req.params;
   res.json({
     id,
-    name: 'Product 2',
+    name: 'Product',
     price: 2000
   });
 });
