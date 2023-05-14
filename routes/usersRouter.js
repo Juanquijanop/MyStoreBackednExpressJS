@@ -1,22 +1,11 @@
 const express = require('express')
-const {faker, FakerError} = require('@faker-js/faker')
+const UserServices = require('./../services/userServices')
 
 const router = express.Router()
+const service = new UserServices();
 
 router.get('/', (req,res)=>{
-  const users = []
-  const {size} = req.query
-  const limit = size || 5
-
-  for (let index = 0; index < limit; index++) {
-    users.push({
-      name:faker.name.firstName(),
-      lastName:faker.name.lastName(),
-
-    })
-
-  }
-
+  const users = service.findAll();
   res.json(users)
 })
 
