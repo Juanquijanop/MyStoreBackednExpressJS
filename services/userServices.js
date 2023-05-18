@@ -22,11 +22,27 @@ class UserServices{
     return user;
   }
 
-  update(){
+  update(id, data){
+
+    index = this.users.findIndex(item => item.id == id);
+    if(user === -1){
+      throw new Error("La operacion ha fallado")
+    }
+    const user = this.users[index]
+    this.users[index] ={...user,...data}
+    return this.users[index]
+
 
   }
 
-  delete(){
+  delete(id){
+
+      index = this.users.findIndex(item => item.id == id);
+      if(user === -1){
+        throw new Error("La operacion ha fallado")
+      }
+      this.users.splice(index,1);
+      return {id}
 
   }
 

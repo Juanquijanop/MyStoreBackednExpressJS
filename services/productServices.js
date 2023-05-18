@@ -36,14 +36,29 @@ class ProductServices{
 
   }
 
-  update(){
+  update(id, data){
+
+    index = this.products.findIndex(item => item.id == id);
+    if(user === -1){
+      throw new Error("La operacion ha fallado")
+    }
+    const product = this.products[index]
+    this.products[index] ={...product,...data}
+    return this.products[index]
 
 
   }
 
-  delete(){
+  delete(id){
 
-  }
+    index = this.products.findIndex(item => item.id == id);
+    if(user === -1){
+      throw new Error("La operacion ha fallado")
+    }
+    this.products.splice(index,1);
+    return {id}
+
+}
 
   constructor(){
     this.products=[];
