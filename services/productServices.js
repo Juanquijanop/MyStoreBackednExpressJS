@@ -14,8 +14,14 @@ class ProductServices{
     }
   }
 
-  create(){
+  save(data){
+    const product={
+      id:faker.datatype.number({ max: 100 }),
+      ...data
+    }
 
+    this.products.push(product);
+    return product;
   }
 
   findAll(){

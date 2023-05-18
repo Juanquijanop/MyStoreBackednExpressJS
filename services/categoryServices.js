@@ -4,11 +4,21 @@ const {faker, FakerError} = require('@faker-js/faker')
 class CategoryServices{
 
   findAll(){
-    this.categories;
+    return this.categories;
   }
 
   findById(id){
 
+  }
+
+  save(data){
+    const category={
+      id:faker.datatype.number({ max: 100 }),
+      ...data
+    }
+
+    this.categories.push(category);
+    return category;
   }
 
   update(){

@@ -4,12 +4,22 @@ const {faker, FakerError} = require('@faker-js/faker')
 class UserServices{
 
   findAll(){
-    this.users;
+    return this.users;
   }
 
   findById(name){
 
-    this.users.find(userName= users.name=name)
+    return this.users.find(userName= users.name=name)
+  }
+
+  save(data){
+    const user={
+      id:faker.datatype.number({ max: 100 }),
+      ...data
+    }
+
+    this.users.push(user);
+    return user;
   }
 
   update(){
@@ -22,9 +32,9 @@ class UserServices{
 
   generateData(){
 
-    const limit = 5
 
-    for (let index = 0; index < limit; index++) {
+
+    for (let index = 0; index < 10; index++) {
       this.users.push({
         name:faker.name.firstName(),
         lastName:faker.name.lastName(),
