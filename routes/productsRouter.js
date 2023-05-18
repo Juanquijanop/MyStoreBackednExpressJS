@@ -18,11 +18,9 @@ router.get('/:id', (req, res) => {
 
 router.post('/',(req,res)=>{
   const body = req.body;
+  const newProducts=service.save(body);
 
-  res.status(201).json({
-    message:'Created',
-    body
-  })
+  res.status(201).json(newProducts)
 })
 
 

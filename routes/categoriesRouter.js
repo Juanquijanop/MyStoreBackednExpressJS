@@ -22,11 +22,8 @@ router.get('/:id',(req,res)=>{
 
 router.post('/',(req,res)=>{
   const body = req.body;
-
-  res.status(201).json({
-    message:'Created',
-    body
-  })
+  const newCategory=service.save(body);
+  res.status(201).json(newCategory);
 })
 
 
