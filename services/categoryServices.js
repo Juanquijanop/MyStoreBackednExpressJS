@@ -3,15 +3,15 @@ const {faker, FakerError} = require('@faker-js/faker')
 
 class CategoryServices{
 
-  findAll(){
+  async findAll(){
     return this.categories;
   }
 
-  findById(id){
+  async findById(id){
 
   }
 
-  save(data){
+  async save(data){
     const category={
       id:faker.datatype.number({ max: 100 }),
       ...data
@@ -21,7 +21,7 @@ class CategoryServices{
     return category;
   }
 
-  update(id, data){
+  async update(id, data){
 
     index = this.categories.findIndex(item => item.id == id);
     if(user === -1){
@@ -34,7 +34,7 @@ class CategoryServices{
 
   }
 
-  delete(id){
+  async delete(id){
 
     index = this.categories.findIndex(item => item.id == id);
     if(user === -1){
@@ -45,7 +45,7 @@ class CategoryServices{
 
 }
 
-  generateData(){
+  async generateData(){
   const limit = 10
 
   for (let index = 0; index < limit; index++) {

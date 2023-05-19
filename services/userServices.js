@@ -3,16 +3,16 @@ const {faker, FakerError} = require('@faker-js/faker')
 
 class UserServices{
 
-  findAll(){
+  async findAll(){
     return this.users;
   }
 
-  findById(name){
+  async findById(name){
 
     return this.users.find(userName= users.name=name)
   }
 
-  save(data){
+  async save(data){
     const user={
       id:faker.datatype.number({ max: 100 }),
       ...data
@@ -22,7 +22,7 @@ class UserServices{
     return user;
   }
 
-  update(id, data){
+  async update(id, data){
 
     index = this.users.findIndex(item => item.id == id);
     if(user === -1){
@@ -35,7 +35,7 @@ class UserServices{
 
   }
 
-  delete(id){
+  async delete(id){
 
       index = this.users.findIndex(item => item.id == id);
       if(user === -1){
@@ -46,7 +46,7 @@ class UserServices{
 
   }
 
-  generateData(){
+  async generateData(){
 
 
 

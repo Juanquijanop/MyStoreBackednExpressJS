@@ -24,19 +24,19 @@ class ProductServices{
     return product;
   }
 
-  findAll(){
+  async findAll(){
 
     return this.products;
 
   }
 
-  findById(id){
+  async findById(id){
 
     return this.products.find(item => item.id == id)
 
   }
 
-  update(id, data){
+  async update(id, data){
 
     index = this.products.findIndex(item => item.id == id);
     if(user === -1){
@@ -49,7 +49,7 @@ class ProductServices{
 
   }
 
-  delete(id){
+  async delete(id){
 
     index = this.products.findIndex(item => item.id == id);
     if(user === -1){
