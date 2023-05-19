@@ -10,13 +10,18 @@ router.get('/', (req,res)=>{
 })
 
 
-router.get('/:id',(req,res)=>{
+router.get('/:id',(req,res,next)=>{
+  try {
   const {id} = req.params
   res.json({
     id:id,
     name:'Juan Manue',
     lastName:'Quijano'
   })
+  } catch (error) {
+    next(error)
+  }
+
 })
 
 

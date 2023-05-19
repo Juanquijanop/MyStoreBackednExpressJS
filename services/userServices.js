@@ -8,7 +8,6 @@ class UserServices{
   }
 
   async findById(name){
-
     return this.users.find(userName= users.name=name)
   }
 
